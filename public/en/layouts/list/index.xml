@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>List Layout on 笨鸟先飞</title>
+    <link>http://localhost:1313/en/layouts/list/</link>
+    <description>Recent content in List Layout on 笨鸟先飞</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 06 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/en/layouts/list/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>List Layout Document</title>
+      <link>http://localhost:1313/en/layouts/list/docs/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/en/layouts/list/docs/</guid>
+      <description>&lt;p&gt;List layout is the built-in section layout. Monochrome add options to adjust its behavior.&lt;/p&gt;
+
+&lt;h2&gt;Configuration&lt;/h2&gt;
+
+
+&lt;h3&gt;Group by year&lt;/h3&gt;
+
+&lt;p&gt;An option to control group setting.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;group_by_year&lt;/span&gt;: &lt;span style=&#34;color:#66d9ef&#34;&gt;false&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;default: theme&amp;rsquo;s &lt;a href=&#34;http://localhost:1313/hugo-theme-monochrome/configuration/theme/#list-layout&#34;&gt;&lt;code&gt;list_layout.enable_group_by_year&lt;/code&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3&gt;Show date&lt;/h3&gt;
+
+&lt;p&gt;Show / Hide date right after the post entry.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;show_date&lt;/span&gt;: &lt;span style=&#34;color:#66d9ef&#34;&gt;false&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;default: theme&amp;rsquo;s &lt;a href=&#34;http://localhost:1313/hugo-theme-monochrome/configuration/theme/#list-layout&#34;&gt;&lt;code&gt;list_layout.enable_show_date&lt;/code&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3&gt;Pagination&lt;/h3&gt;
+
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;pagination&lt;/span&gt;: &lt;span style=&#34;color:#66d9ef&#34;&gt;false&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;default: theme&amp;rsquo;s &lt;a href=&#34;http://localhost:1313/hugo-theme-monochrome/configuration/theme/#list-layout&#34;&gt;&lt;code&gt;list_layout.enable_pagination&lt;/code&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

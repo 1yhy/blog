@@ -1,0 +1,37 @@
+<div class="basecard-item content-margin">
+    {{ $quotes := split (.Get "quote") ";" }}
+    {{ $comments := split (.Get "comment") ";" }}
+    {{ $sources := split (.Get "source") ";" }}
+
+    <!-- 获取引用的数量 -->
+    {{ $lastIndex := sub (len $quotes) 1 }}
+
+    <!-- 遍历每条引用 -->
+    {{ range $index, $quote := $quotes }}
+    <div class="quote-card-group" style="margin-bottom: 1em;">
+        <!-- 每条引用 -->
+        <div class="basecard-title">
+            {{ $quote }}
+        </div>
+
+        <!-- 每条引用的出处 -->
+        {{ if lt $index (len $sources) }}
+        <div class="basecard-summary" style="text-align: right; font-size: 0.9em;">
+            — {{ index $sources $index }}
+        </div>
+        {{ end }}
+
+        <!-- 如果有相应的评论 -->
+        {{ if lt $index (len $comments) }}
+        <div class="basecard-metadata" style="font-size: 0.8em; color: #777;">
+            {{ index $comments $index }}
+        </div>
+        {{ end }}
+
+        <!-- 分隔线（仅在当前引用不是最后一条时显示） -->
+        {{ if lt $index $lastIndex }}
+        <hr style="border: none; border-top: 1px solid #ddd; margin: 1em 0;">
+        {{ end }}
+    </div>
+    {{ end }}
+</div>

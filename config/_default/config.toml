@@ -1,0 +1,10 @@
+baseURL = 'https://1yhy.github.io/blog'
+languageCode = 'zh-CN'
+title = '笨鸟先飞'
+theme = "hugo-theme-monochrome"
+defaultContentLanguage = "zh-CN"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
