@@ -11,7 +11,7 @@
 }
 
 .basecard-item .basecard-title {
-    font-size: 1.25rem;
+    font-size: 1.2rem;
     /* 20px */
     line-height: 1.75rem;
     /* 28px */
@@ -36,4 +36,8 @@
     line-height: 1rem;
     /* 16px */
     color: var(--color-text-secondary);
+}
+
+.quote-item:not(:last-child) {
+    margin-bottom: 1em;
 }

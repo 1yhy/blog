@@ -3,6 +3,7 @@ languageCode = 'zh-CN'
 title = '笨鸟先飞'
 theme = "hugo-theme-monochrome"
 defaultContentLanguage = "zh-CN"
+enableEmoji = true
 
 [markup]
   [markup.goldmark]
