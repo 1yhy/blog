@@ -4,8 +4,18 @@ title = '笨鸟先飞'
 theme = "hugo-theme-monochrome"
 defaultContentLanguage = "zh-CN"
 enableEmoji = true
+enableGitInfo = true
 
-[markup]
-  [markup.goldmark]
-    [markup.goldmark.renderer]
-      unsafe = true
+[taxonomies]
+category = "categories"
+tag = "tags"
+series = "series"
+
+[outputs]
+home = ["HTML", "RSS", "JSON"]
+
+[pagination]
+pagerSize = 5
+
+[frontmatter]
+lastmod = ["lastmod", ":fileModTime"]

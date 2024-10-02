@@ -51,7 +51,7 @@
   <meta name="twitter:title" content="笨鸟先飞">
   <meta name="twitter:description" content="杨鸿宇的个人博客，一个爱折腾、爱技术的前端开发者。">
 
-    <link rel="stylesheet" href="/blog/style.css" integrity="">
+    <link rel="stylesheet" href="/blog/style.min.d21d7ec2a4c5fdd1949f0c9ae34f92464a631f1e3f810acc268d854c8a7153dc798b0871ffbd2939035e2635fb78392227dcd96345321daffcbe0b3bffb9f612.css" integrity="sha512-0h1&#43;wqTF/dGUnwya40&#43;SRkpjHx4/gQrMJo2FTIpxU9x5iwhx/70pOQNeJjX7eDkiJ9zZY0UyHa/8vgs7/7n2Eg==">
 
 
 
@@ -69,7 +69,11 @@
             document.documentElement.setAttribute("data-theme", "light");
         }
     </script>
-<script defer src="/blog/js/header.js" integrity=""></script>
+<script defer src="/blog/js/header.64a5d751579791aca02cca13ec10c056a8bb0de07cc69a70f0ef401bb0f470f2360e07f1f6f4398e0681f9abd2c64b3cb9d167ee471fa2a07bb1943e06e0c02b.js" integrity="sha512-ZKXXUVeXkaygLMoT7BDAVqi7DeB8xppw8O9AG7D0cPI2Dgfx9vQ5jgaB&#43;avSxks8udFn7kcfoqB7sZQ&#43;BuDAKw=="></script>
+
+
+
+    <script defer src="/blog/js/zooming.684b5d075bf94d0adfa21a7e7eb9acec1ddfb2e7b47d6657981617f0db0cf50949f1172801595afa3051f51b28d67f6a2d0c41be677b59b564307d9dbe4a4fd2.js" integrity="sha512-aEtdB1v5TQrfohp&#43;frms7B3fsue0fWZXmBYX8NsM9QlJ8RcoAVla&#43;jBR9Rso1n9qLQxBvmd7WbVkMH2dvkpP0g=="></script>
 
 
 
@@ -79,7 +83,10 @@
 
 
 
-
+    
+    
+    
+    <script defer src="/blog/js/search-zh-CN.9210f7057963fa68549c440da1feaea60e47c54a22ee088052768dd8c9a44c917bf19fe53d54835619992e7d6b86bfc531ee761cae2b691b6c070ea1f4e1d0c1.js" integrity="sha512-khD3BXlj&#43;mhUnEQNof6upg5HxUoi7giAUnaN2MmkTJF78Z/lPVSDVhmZLn1rhr/FMe52HK4raRtsBw6h9OHQwQ=="></script>
 
 
 
@@ -110,6 +117,8 @@
             <div id="sidebar">
                 <ul><li>
                             <a href="/blog/posts/">文章</a></li><li>
+                            <a href="/blog/talks/">碎碎念</a></li><li>
+                            <a href="/blog/friends/">友链</a></li><li>
                             <a href="/blog/me/">关于</a></li></ul>
             </div>
         </div>
@@ -145,6 +154,41 @@
 </svg>
         </div>
 
+        
+            <div id="search_tool">
+                <svg id="search_btn" class="toolbox-btn" width="18px" height="18px" viewBox="0 0 24 24">
+<svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24" height="24" viewBox="0 0 24 24" fill="none"
+    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+    stroke-linejoin="round">
+    <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+</svg>
+
+</svg><div id="search_menu_wrapper" class="hidden">
+    <div id="search_menu">
+        <div id="search_menu_toolbar">
+            <div id="search_menu_input_wrapper">
+                <input id="search_menu_input" type="text" placeholder='搜索文章'>
+            </div>
+            <div id="search_menu_close_btn">
+                <svg width="18px" height="18px" viewBox="0 0 24 24">
+<svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24" height="24" viewBox="0 0 24 24" fill="none"
+    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+    stroke-linejoin="round">
+    <line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line>
+</svg>
+
+</svg>
+            </div>
+        </div>
+        <div id="search_menu_results">
+        </div>
+    </div>
+</div>
+</div>
         
 
         
@@ -188,6 +232,14 @@
                     
                 </li><li class="navbar-item pure-menu-item ">
                     
+                        <a href="/blog/talks/" class="pure-menu-link">碎碎念</a>
+                    
+                </li><li class="navbar-item pure-menu-item ">
+                    
+                        <a href="/blog/friends/" class="pure-menu-link">友链</a>
+                    
+                </li><li class="navbar-item pure-menu-item ">
+                    
                         <a href="/blog/me/" class="pure-menu-link">关于</a>
                     
                 </li></ul>
@@ -196,66 +248,23 @@
             <div id="content" class="content-margin">
                 
 
-    <div class="balloon-layout">
+
+<div class="content-margin">
+
+
+
+<article >
+    
+    
         
-
-
-
-<div class="balloon-head-item">
-    
-    <div class="balloon-head-item-desktop">
-        <div class="balloon-head-item-img-light">
-            
-    <div class="balloon-head-item-img">
-        <img alt="balloon_head" src='http://localhost:1313/blog/icons/bird.svg' >
-    </div>
-
-
-        </div>
-        <div class="balloon-head-item-img-dark">
-            
-    <div class="balloon-head-item-img">
-        <img alt="balloon_head" src='http://localhost:1313/blog/icons/bird-dark.svg' >
-    </div>
-
-
-        </div>
         
-<div class="balloon-line-container">
     
-    <div class="balloon-line" style="width: 2px"></div>
+    <p>Hi👋，我是杨鸿宇，欢迎来到我的博客站！</p>
+<p>一个普通00后前端开发工程师，喜欢Coding👨‍💻</p>
+<p>目前在深圳, 这里，是梦开始的地方，记录着我的点点滴滴，希望你也能找到一个真实的自己🌈！</p>
+<div class="icon-group">
     
-</div>
-
-    </div>
-    
-    <div class="balloon-head-item-mobile">
-        <div class="balloon-head-item-img-light">
-            
-    <div class="balloon-head-item-img">
-        <img alt="balloon_head" src='http://localhost:1313/blog/icons/bird.svg' >
-    </div>
-
-
-        </div>
-        <div class="balloon-head-item-img-dark">
-            
-    <div class="balloon-head-item-img">
-        <img alt="balloon_head" src='http://localhost:1313/blog/icons/bird-dark.svg' >
-    </div>
-
-
-        </div>
-    </div>
-
-    <div class="balloon-head-item-content">
-
-
-
-<article class="line-numbers">
-    
-    
-    <div class="icon">
+<div class="icon">
     
         <a rel="noopener" target="_blank" href="https://github.com/1yhy" aria-label="github">
     
@@ -276,247 +285,84 @@
     
 </div>
 
-<p>This is the demo of hugo-theme-monochrome.</p>
+<div class="icon">
+    
+        <a rel="noopener" target="_blank" href="https://github.com/1yhy" aria-label="rss">
+    
+        
+            
+<svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24" height="24" viewBox="0 0 24 24" fill="none"
+    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+    stroke-linejoin="round">
+    <path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle>
+</svg>
+
+
+        
+    
+        </a>
+    
+</div>
+
+<div class="icon">
+    
+        <a rel="noopener" target="_blank" href="https://x.com/yhy319139806" aria-label="twitter">
+    
+        
+            
+<svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24" height="24" viewBox="0 0 24 24" fill="none"
+    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+    stroke-linejoin="round">
+    <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+</svg>
+
+
+        
+    
+        </a>
+    
+</div>
+
+
+</div>
+<p><strong>近期发布</strong>
+
+
+<ul class="list-layout">
+    
+        <li>
+            <a href="/blog/me/jade-dynasty/">《诛仙》</a>
+            <span>2024/10/03</span>
+        </li>
+    
+        <li>
+            <a href="/blog/me/legend-of-qin/">《秦时明月》</a>
+            <span>2024/10/02</span>
+        </li>
+    
+        <li>
+            <a href="/blog/me/sword/">《剑来》</a>
+            <span>2024/10/02</span>
+        </li>
+    
+        <li>
+            <a href="/blog/me/renegade-immortal/">《仙逆》</a>
+            <span>2024/10/02</span>
+        </li>
+    
+        <li>
+            <a href="/blog/me/nine-songs-of-the-sky/">《天行九歌》</a>
+            <span>2024/10/02</span>
+        </li>
+    
+</ul></p>
 
 </article>
 </div>
-</div>
-
-
-        
-        
-        
-
-        
-            
-
-            
-                <div class="balloon-title-item">
-    <div class="balloon-title-item-line">
-        
-<div class="balloon-line-container">
-    
-    <div class="balloon-line" style="width: 2px"></div>
-    
-</div>
-
-    </div>
-    <h5 class="balloon-title-item-content">Support</h5>
-</div>
-                <div class="balloon-card-item">
-    <div class="balloon-card-item-line">
-        
-<div class="balloon-line-container">
-    
-    <div class="balloon-line" style="width: 2px"></div>
-    
-</div>
-
-        <div class="balloon-dot"></div>
-
-        
-<div class="balloon-line-container">
-    
-    <div class="balloon-line" style="width: 2px"></div>
-    
-</div>
-
-    </div>
-
-    <div class="balloon-card-item-content">
-
-
-
-<article class="line-numbers">
-    
-    
-    <p>If you find my work brings value to your life and would like to support its development, you can sponsor me in the following ways.</p>
-<p style="width: 164px">
-<a href="https://www.buymeacoffee.com/ykzheng" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 45px !important;width: 164px !important; margin-left: 0px; margin-right: 0px;" ></a>
-</p>
-
-</article>
-</div>
-</div>
-
-            
-                <div class="balloon-title-item">
-    <div class="balloon-title-item-line">
-        
-<div class="balloon-line-container">
-    
-    <div class="balloon-line" style="width: 2px"></div>
-    
-</div>
-
-    </div>
-    <h5 class="balloon-title-item-content">Features</h5>
-</div>
-                <div class="balloon-card-item">
-    <div class="balloon-card-item-line">
-        
-<div class="balloon-line-container">
-    
-    <div class="balloon-line" style="width: 2px"></div>
-    
-</div>
-
-        <div class="balloon-dot"></div>
-
-        
-<div class="balloon-line-container">
-    
-    <div class="balloon-line" style="width: 2px"></div>
-    
-</div>
-
-    </div>
-
-    <div class="balloon-card-item-content">
-
-
-
-<article class="line-numbers">
-    
-    
-    <ol>
-<li><strong>Clean UI with small resources.</strong> Monochrome has clean UI design with ~5KB gzipped bundled CSS.</li>
-<li><strong>Self-Contained.</strong> Monochrome doesn&rsquo;t require webpack, nodejs and other dependencies to setup or edit, just hugo.</li>
-<li><strong>Responsive layout.</strong> Adapt to different viewpoint, from desktop to mobile.</li>
-<li><strong>Support light/dark mode.</strong> Low-light UI.</li>
-<li><strong>Multiple layouts built-in.</strong> Monochrome now supports 6 different layouts. See <a href="https://kaiiiz.github.io/hugo-theme-monochrome/layouts/">Demo</a>.</li>
-<li><strong>Nested navbar and Multilingual mode.</strong> Make good use of hugo&rsquo;s well-designed structure.</li>
-<li><strong>Syntax Highlighting (with copy feature).</strong> Integrate both server-side solution (Chroma, hugo built-in) and client-side solution (Prism.js, for someone who need more languages supported).</li>
-<li><strong>Site Search with real-time matches highlight.</strong> Powered by uFuzzy.</li>
-<li><strong>SEO-friendly.</strong> Easily change your author, description, keywords, open graph, twitter card meatdata.</li>
-<li><strong>Support mathematical notation.</strong> Powered by MathJax.</li>
-<li><strong>Useful shortcodes.</strong> See <a href="https://kaiiiz.github.io/hugo-theme-monochrome/shortcodes/">Document</a>.</li>
-</ol>
-
-</article>
-</div>
-</div>
-
-            
-                <div class="balloon-title-item">
-    <div class="balloon-title-item-line">
-        
-<div class="balloon-line-container">
-    
-    <div class="balloon-line" style="width: 2px"></div>
-    
-</div>
-
-    </div>
-    <h5 class="balloon-title-item-content">Timeline</h5>
-</div>
-                <div class="balloon-card-item">
-    <div class="balloon-card-item-line">
-        
-<div class="balloon-line-container">
-    
-    <div class="balloon-line" style="width: 2px"></div>
-    
-</div>
-
-        <div class="balloon-dot"></div>
-
-        
-<div class="balloon-line-container">
-    
-    <div class="balloon-line" style="width: 2px"></div>
-    
-</div>
-
-    </div>
-
-    <div class="balloon-card-item-content">
-
-
-
-<article class="line-numbers">
-    
-    
-    <ul>
-<li>2024/05/26 - v3.1.0 release</li>
-<li>2024/05/26 - v3.0.0 release</li>
-<li>2023/07/23 - v2.0.0 release</li>
-<li>2022/04/02 - v1.0.1 release</li>
-<li>2022/04/01 - v1.0.0 release</li>
-<li>2022/02/25 - v0.9.2 release</li>
-<li>2022/02/25 - v0.9.1 release</li>
-<li>2022/01/31 - v0.9.0 release</li>
-<li>2021/07/29 - v0.8.0 release</li>
-<li>2021/07/08 - v0.7.1 release</li>
-<li>2021/06/24 - v0.7.0 release</li>
-<li>2021/04/15 - v0.6.2 release</li>
-<li>2021/02/17 - v0.6.1 release</li>
-<li>2021/02/16 - v0.6.0 release</li>
-<li>2021/02/15 - v0.5.0 release</li>
-<li>2021/02/12 - v0.4.0 release</li>
-<li>2021/02/10 - v0.3.0 release</li>
-<li>2021/02/09 - v0.2.0 release</li>
-<li>2021/02/08 - v0.1.0 release</li>
-</ul>
-
-</article>
-</div>
-</div>
-
-            
-                <div class="balloon-title-item">
-    <div class="balloon-title-item-line">
-        
-<div class="balloon-line-container">
-    
-    <div class="balloon-line" style="width: 2px"></div>
-    
-</div>
-
-    </div>
-    <h5 class="balloon-title-item-content">Acknowledgement</h5>
-</div>
-                <div class="balloon-card-item">
-    <div class="balloon-card-item-line">
-        
-<div class="balloon-line-container">
-    
-    <div class="balloon-line" style="width: 2px"></div>
-    
-</div>
-
-        <div class="balloon-dot"></div>
-
-        
-<div class="balloon-line-container">
-    
-</div>
-
-    </div>
-
-    <div class="balloon-card-item-content">
-
-
-
-<article class="line-numbers">
-    
-    
-    <ul>
-<li><a href="https://github.com/PrismJS/prism">PrismJS/prism</a> MIT</li>
-<li><a href="https://github.com/leeoniya/uFuzzy">leeoniya/uFuzzy</a> MIT</li>
-<li><a href="https://github.com/mathjax/MathJax">mathjax/MathJax</a> Apache-2.0</li>
-<li><a href="https://github.com/kingdido999/zooming">kingdido999/zooming</a> MIT</li>
-<li><a href="https://github.com/feathericons/feather">feathericons/feather</a> MIT</li>
-<li><a href="https://github.com/simple-icons/simple-icons">simple-icons/simple-icons</a> CC0-1.0</li>
-</ul>
-
-</article>
-</div>
-</div>
-
-            
-        
-    </div>
 
 
 

@@ -5,7 +5,19 @@
   weight = 1
 
 [[navbar]]
+  identifier = "talks"
+  name = "碎碎念"
+  url = "/talks/"
+  weight = 2
+
+[[navbar]]
+  identifier = "friends"
+  name = "友链"
+  url = "/friends/"
+  weight = 3
+
+[[navbar]]
   identifier = "me"
   name = "关于"
   url = "/me/"
-  weight = 2
+  weight = 4

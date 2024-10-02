@@ -1,17 +1,24 @@
 ---
-type: 'balloon'
-balloon_img_src: "icons/bird.svg"
-balloon_img_src_dark: "icons/bird-dark.svg"
-balloon_circle: false
-balloon_resources: "/about"
+title: '笨鸟先飞'
 description: "杨鸿宇的个人博客，一个爱折腾、爱技术的前端开发者。"
-zooming_js: false
 keywords:
 - 杨鸿宇
 - 独立博客
 - 前端开发
 ---
+Hi👋，我是杨鸿宇，欢迎来到我的博客站！
 
+一个普通00后前端开发工程师，喜欢Coding👨‍💻
+
+目前在深圳, 这里，是梦开始的地方，记录着我的点点滴滴，希望你也能找到一个真实的自己🌈！
+
+
+{{< icon-group >}}
 {{< icon vendor="feather" name="github" link="https://github.com/1yhy" >}}
+{{< icon vendor="feather" name="rss" link="https://github.com/1yhy" >}}
+{{< icon vendor="feather" name="twitter" link="https://x.com/yhy319139806" >}}
+{{< /icon-group >}}
 
-This is the demo of hugo-theme-monochrome.
+
+**近期发布**
+{{< recent-posts sortby="lastMod" limit=10 >}}

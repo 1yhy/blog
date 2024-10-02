@@ -2,17 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/blog/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-US"
-                href="http://localhost:1313/blog/en-us/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-CN"
-                href="http://localhost:1313/blog/"
-                />
+    <loc>http://localhost:1313/blog/me/jade-dynasty/</loc>
+    <lastmod>2024-10-03T00:21:09+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/blog/me/sword/</loc>
+    <lastmod>2024-10-02T23:41:20+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/blog/me/renegade-immortal/</loc>
+    <lastmod>2024-10-02T21:47:21+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/blog/me/legend-of-qin/</loc>
+    <lastmod>2024-10-02T23:56:44+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/blog/me/nine-songs-of-the-sky/</loc>
+    <lastmod>2024-10-02T21:46:31+08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/blog/categories/</loc>
     <xhtml:link
@@ -27,6 +30,7 @@
                 />
   </url><url>
     <loc>http://localhost:1313/blog/tags/index/</loc>
+    <lastmod>2024-09-30T23:54:20+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
@@ -39,6 +43,7 @@
                 />
   </url><url>
     <loc>http://localhost:1313/blog/posts/</loc>
+    <lastmod>2024-09-30T23:54:20+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
@@ -50,7 +55,20 @@
                 href="http://localhost:1313/blog/posts/"
                 />
   </url><url>
+    <loc>http://localhost:1313/blog/series/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-US"
+                href="http://localhost:1313/blog/en-us/series/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-CN"
+                href="http://localhost:1313/blog/series/"
+                />
+  </url><url>
     <loc>http://localhost:1313/blog/tags/</loc>
+    <lastmod>2024-09-30T23:54:20+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
@@ -62,6 +80,20 @@
                 href="http://localhost:1313/blog/tags/"
                 />
   </url><url>
+    <loc>http://localhost:1313/blog/</loc>
+    <lastmod>2024-10-03T00:04:29+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-US"
+                href="http://localhost:1313/blog/en-us/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-CN"
+                href="http://localhost:1313/blog/"
+                />
+  </url><url>
     <loc>http://localhost:1313/blog/me/</loc>
+    <lastmod>2024-10-02T23:41:00+08:00</lastmod>
   </url>
 </urlset>
