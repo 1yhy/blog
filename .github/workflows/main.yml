@@ -42,6 +42,6 @@ jobs:
 
       - name: restart docker container
         run: |
-          ssh root@${{ secrets.SERVER_IP }} "cd /root/data/docker_data/blog/ && docker-compose up -d"
+          ssh root@${{ secrets.SERVER_IP }} "cd /root/data/docker_data/blog/ && docker compose up -d"
         env:
           SSH_KNOWN_HOSTS: ${{ secrets.SERVER_IP }}
