@@ -24,16 +24,13 @@ jobs:
       - name: build content to public site
         run: hugo --minify --gc
 
-      - name: install nodejs
-        uses: actions/setup-node@v4.0.4
+      - name: setup ssh
+        uses: webfactory/ssh-agent@v0.5.3
         with:
-          node-version: '18'
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}  # 这里使用 GitHub Secrets 中配置的私钥
 
-      - name: install tencent cloud cloudbase
-        run: npm i -g @cloudbase/cli
-
-      - name: publish blog to tencent static site
-        working-directory: ./public
+      - name: deploy to server
         run: |
-          tcb login --apiKeyId ${{ secrets.QCLOUDAPIKEYID }} --apiKey ${{ secrets.QCLOUDAPIKEY }}
-          tcb hosting deploy ./ -e ${{ secrets.QCLOUDENVID }}
+          rsync -avz --delete ./public/ root@43.135.94.57:/root/data/docker_data/blog/
+        env:
+          SSH_KNOWN_HOSTS: 43.135.94.57
