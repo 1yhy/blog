@@ -1,0 +1,41 @@
+name: Auto publish to static website
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  hugo-publish:
+    name: publish content to static website
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout blog repo
+        uses: actions/checkout@v3
+        with:
+          submodules: true  # 启用子模块支持
+
+      - name: setup hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: latest
+          extended: true
+
+      - name: build content to public site
+        run: hugo --minify --gc
+
+      - name: setup ssh
+        uses: webfactory/ssh-agent@v0.5.3
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}  # 这里使用 GitHub Secrets 中配置的私钥
+
+      - name: Add SSH key to known_hosts
+        run: |
+          mkdir -p ~/.ssh
+          ssh-keyscan 43.135.94.57 >> ~/.ssh/known_hosts
+      
+      - name: deploy to server
+        run: |
+          rsync -avz --delete ./public/ root@43.135.94.57:/root/data/docker_data/blog/public/
+        env:
+          SSH_KNOWN_HOSTS: 43.135.94.57
