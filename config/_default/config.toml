@@ -3,7 +3,7 @@ languageCode = 'zh-cn'
 title = '笨鸟先飞'
 theme = "hugo-theme-monochrome"
 defaultContentLanguage = "zh-cn"
-defaultContentLanguageInSubdir = false
+defaultContentLanguageInSubdir = true
 enableEmoji = true
 enableGitInfo = true
 
