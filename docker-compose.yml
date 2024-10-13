@@ -1,10 +1,10 @@
+name: yhy-blog
 version: '3.8'
 
 services:
-  hugo:
-    image: klakegg/hugo:ext-alpine
+  web:
+    image: nginx:alpine
     volumes:
-      - /public:/src  # 将公共目录挂载到容器中
+      - /root/data/docker_data/blog/public:/usr/share/nginx/html  # 将 public 目录挂载到容器中
     ports:
-      - "1313:1313"  # 暴露 Hugo 服务器的端口
-    command: ["hugo", "server", "--bind", "0.0.0.0", "--baseURL", "https://blog.yhy.gd.cn"]
+      - "${{ secrets.SERVER_PORT }}:80"  # 映射端口

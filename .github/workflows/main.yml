@@ -27,15 +27,21 @@ jobs:
       - name: setup ssh
         uses: webfactory/ssh-agent@v0.5.3
         with:
-          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}  # 这里使用 GitHub Secrets 中配置的私钥
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}  # 使用 GitHub Secrets 中配置的私钥
 
       - name: Add SSH key to known_hosts
         run: |
           mkdir -p ~/.ssh
-          ssh-keyscan 43.135.94.57 >> ~/.ssh/known_hosts
-      
+          ssh-keyscan ${{ secrets.SERVER_IP }} >> ~/.ssh/known_hosts  # 使用存储在 Secrets 中的服务器 IP
+
       - name: deploy to server
         run: |
-          rsync -avz --delete ./public/ root@43.135.94.57:/root/data/docker_data/blog/public/
+          rsync -avz --delete ./public/ root@${{ secrets.SERVER_IP }}:/root/data/docker_data/blog/public/
         env:
-          SSH_KNOWN_HOSTS: 43.135.94.57
+          SSH_KNOWN_HOSTS: ${{ secrets.SERVER_IP }}
+
+      - name: restart docker container
+        run: |
+          ssh root@${{ secrets.SERVER_IP }} "cd /root/data/docker_data/blog/ && docker-compose up -d"
+        env:
+          SSH_KNOWN_HOSTS: ${{ secrets.SERVER_IP }}
