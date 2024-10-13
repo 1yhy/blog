@@ -27,7 +27,7 @@ jobs:
       - name: install nodejs
         uses: actions/setup-node@v4.0.4
         with:
-          node-version: '20'
+          node-version: '18'
 
       - name: install tencent cloud cloudbase
         run: npm i -g @cloudbase/cli
