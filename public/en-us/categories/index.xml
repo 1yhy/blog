@@ -5,6 +5,6 @@
     <link>http://localhost:1313/blog/en-us/categories/</link>
     <description>Recent content in Categories on 笨鸟先飞</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-US</language><atom:link href="http://localhost:1313/blog/en-us/categories/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language><atom:link href="http://localhost:1313/blog/en-us/categories/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

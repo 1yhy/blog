@@ -1,0 +1,484 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang='zh-cn'><head><script src="/blog/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=blog/livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href='http://localhost:1313/blog/favicon.ico' type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>部署Nginx Proxy Manager，一款开源的Nginx可视化应用 - 笨鸟先飞</title>
+
+    
+    <meta name="description" content="服务器部署Nginx Proxy Manager，可视化你的Nginx操作，轻松配置和反向代理Https" />
+    
+
+    
+
+    
+    <meta name="author" content="yhy" />
+    
+
+    
+        <meta property="og:url" content="http://localhost:1313/blog/posts/nginx-proxy-management/">
+  <meta property="og:site_name" content="笨鸟先飞">
+  <meta property="og:title" content="部署Nginx Proxy Manager，一款开源的Nginx可视化应用">
+  <meta property="og:description" content="服务器部署Nginx Proxy Manager，可视化你的Nginx操作，轻松配置和反向代理Https">
+  <meta property="og:locale" content="zh_cn">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2024-10-11T00:00:32+08:00">
+    <meta property="article:modified_time" content="2024-10-13T20:37:33+08:00">
+    <meta property="article:tag" content="Nginx Proxy Manager">
+    <meta property="article:tag" content="运维">
+    <meta property="article:tag" content="Nginx">
+
+    
+
+    
+        
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="部署Nginx Proxy Manager，一款开源的Nginx可视化应用">
+  <meta name="twitter:description" content="服务器部署Nginx Proxy Manager，可视化你的Nginx操作，轻松配置和反向代理Https">
+
+    <link rel="stylesheet" href="/blog/style.css" integrity="">
+
+
+
+    <link rel="stylesheet" href="/blog/lib/css/prism.css" integrity="">
+
+
+
+    
+    <script>
+        if (!('theme' in localStorage)) {
+            localStorage.theme = 'dark';
+        }
+
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.setAttribute("data-theme", "dark");
+        } else {
+            document.documentElement.setAttribute("data-theme", "light");
+        }
+    </script>
+<script defer src="/blog/js/header.js" integrity=""></script>
+
+
+
+    <script defer src="/blog/js/zooming.js" integrity=""></script>
+
+
+
+
+
+
+
+    
+        
+
+        
+        
+
+        
+        
+            
+        
+
+        <script defer src="/blog/js/prism.js" integrity="" data-manual></script>
+    
+
+
+
+    
+    
+    
+    <script defer src="/blog/js/search-zh-cn.js" integrity=""></script>
+
+
+
+
+<link rel="stylesheet" href="http://localhost:1313/blog/user.css">
+
+    
+</head>
+<body><header>
+    <div id="header_left">
+        <div id="sidebar_btn">
+            <input type="checkbox" id="sidebar_btn_input" class="hidden" />
+            <label id="sidebar_btn_label" for="sidebar_btn_input">
+                <svg id="menu_icon" width="26px" height="26px" viewBox="0 0 24 24">
+<svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24" height="24" viewBox="0 0 24 24" fill="none"
+    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+    stroke-linejoin="round">
+    <line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line>
+</svg>
+
+</svg>
+            </label>
+            <label id="sidebar_canvas_overlay_wrapper" for="sidebar_btn_input">
+                <div id="sidebar_canvas_overlay"></div>
+            </label>
+            <div id="sidebar">
+                <ul><li>
+                            <a href="/blog/posts/">文章</a></li><li>
+                            <a href="/blog/talks/">碎碎念</a></li><li>
+                            <a href="/blog/me/">关于</a></li></ul>
+            </div>
+        </div>
+    
+        <div class="brand">
+            <div>
+                <a href="/blog/">笨鸟先飞</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="toolbox">
+        <div id="theme_tool">
+            <svg id="dark_mode_btn" class="toolbox-btn" width="18px" height="18px" viewBox="0 0 24 24">
+<svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24" height="24" viewBox="0 0 24 24" fill="none"
+    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+    stroke-linejoin="round">
+    <circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+</svg>
+
+</svg>
+            <svg id="light_mode_btn" class="toolbox-btn" width="18px" height="18px" viewBox="0 0 24 24">
+<svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24" height="24" viewBox="0 0 24 24" fill="none"
+    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+    stroke-linejoin="round">
+    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+</svg>
+
+</svg>
+        </div>
+
+        
+            <div id="search_tool">
+                <svg id="search_btn" class="toolbox-btn" width="18px" height="18px" viewBox="0 0 24 24">
+<svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24" height="24" viewBox="0 0 24 24" fill="none"
+    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+    stroke-linejoin="round">
+    <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+</svg>
+
+</svg><div id="search_menu_wrapper" class="hidden">
+    <div id="search_menu">
+        <div id="search_menu_toolbar">
+            <div id="search_menu_input_wrapper">
+                <input id="search_menu_input" type="text" placeholder='搜索文章'>
+            </div>
+            <div id="search_menu_close_btn">
+                <svg width="18px" height="18px" viewBox="0 0 24 24">
+<svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24" height="24" viewBox="0 0 24 24" fill="none"
+    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+    stroke-linejoin="round">
+    <line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line>
+</svg>
+
+</svg>
+            </div>
+        </div>
+        <div id="search_menu_results">
+        </div>
+    </div>
+</div>
+</div>
+        
+
+        
+            <div id="translation_tool" class="dropdown-wrapper pure-menu pure-menu-horizontal toolbox-btn" onclick="void(0)">
+                <ul class="pure-menu-list">
+                    <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
+                        <div class="dropdown-btn pure-menu-link">
+                            <svg width="18px" height="18px" viewBox="0 0 24 24">
+<svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24" height="24" viewBox="0 0 24 24" fill="none"
+    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+    stroke-linejoin="round">
+    <circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+</svg>
+
+</svg>
+                            <span class="dropdown-desc">简体中文</span>
+                        </div>
+                        <ul class="pure-menu-children">
+                            
+                            <li class="pure-menu-item">
+                                <a href="http://localhost:1313/blog/" class="pure-menu-link">简体中文</a>
+                            </li>
+                            
+                            <li class="pure-menu-item">
+                                <a href="http://localhost:1313/blog/en-us/" class="pure-menu-link">English</a>
+                            </li>
+                            
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        
+    </div>
+</header>
+<nav id="navbar" class="pure-menu">
+    <ul class="pure-menu-list"><li class="navbar-item pure-menu-item insection">
+                    
+                        <a href="/blog/posts/" class="pure-menu-link">文章</a>
+                    
+                </li><li class="navbar-item pure-menu-item ">
+                    
+                        <a href="/blog/talks/" class="pure-menu-link">碎碎念</a>
+                    
+                </li><li class="navbar-item pure-menu-item ">
+                    
+                        <a href="/blog/me/" class="pure-menu-link">关于</a>
+                    
+                </li></ul>
+</nav>
+<main>
+            <div id="content" class="content-margin">
+                
+    
+    <div class="collapsible-menu-wrapper"><div class="collapsible-menu-type"><span>文章目錄</span></div><div class="collapsible-menu">
+        
+            <nav id="TableOfContents">
+  <ul>
+    <li><a href="#部署npm">部署NPM</a></li>
+    <li><a href="#更新-nginx-proxy-manager">更新 Nginx Proxy Manager</a></li>
+    <li><a href="#卸载-nginx-proxy-manager">卸载 Nginx Proxy Manager</a></li>
+    <li><a href="#nginx-proxy-manager添加反向代理">Nginx Proxy Manager添加反向代理</a></li>
+    <li><a href="#nginx-proxy-manager配置https">Nginx Proxy Manager配置Https</a></li>
+  </ul>
+</nav>
+        
+    </div></div>
+
+
+
+    <div class="content-margin">
+
+
+
+<article >
+    
+    
+        
+        
+    
+    
+<h1 id="自建nginx-proxy-managerhttpsnginxproxymanagercomguidequick-setup" class="header-anchor-wrapper">自建<a href="https://nginxproxymanager.com/guide/#quick-setup">Nginx Proxy Manager</a>
+  <a href="#%e8%87%aa%e5%bb%banginx-proxy-managerhttpsnginxproxymanagercomguidequick-setup" class="header-anchor-link">
+    <svg width="16px" height="16px" viewBox="0 0 24 24">
+<svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24" height="24" viewBox="0 0 24 24" fill="none"
+    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+    stroke-linejoin="round">
+    <line x1="4" y1="9" x2="20" y2="9"></line><line x1="4" y1="15" x2="20" y2="15"></line><line x1="10" y1="3" x2="8" y2="21"></line><line x1="16" y1="3" x2="14" y2="21"></line>
+</svg>
+
+</svg>
+  </a>
+</h1>
+
+<hr>
+<blockquote>
+<p><strong>前置条件：在服务器安装完成<code>Docker</code></strong></p>
+</blockquote>
+
+<h2 id="部署npm" class="header-anchor-wrapper">部署NPM
+  <a href="#%e9%83%a8%e7%bd%b2npm" class="header-anchor-link">
+    <svg width="16px" height="16px" viewBox="0 0 24 24">
+<svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24" height="24" viewBox="0 0 24 24" fill="none"
+    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+    stroke-linejoin="round">
+    <line x1="4" y1="9" x2="20" y2="9"></line><line x1="4" y1="15" x2="20" y2="15"></line><line x1="10" y1="3" x2="8" y2="21"></line><line x1="16" y1="3" x2="14" y2="21"></line>
+</svg>
+
+</svg>
+  </a>
+</h2>
+
+<ol>
+<li>创建安装NPM的目录，例如：</li>
+</ol>
+<pre  class="mc-prism hide language-text" ><code class="language-bash">sudo -i
+mkdir -p /root/data/docker_data/npm
+</code></pre>
+<ol start="2">
+<li>编辑<code>docker-compose.yml</code>文件</li>
+</ol>
+<pre  class="mc-prism hide language-text" ><code class="language-bash">cd /root/data/docker_data/npm
+
+vim docker-compose.yml
+
+# 输入安装脚本
+version: '3'
+services:
+  app:
+    image: 'jc21/nginx-proxy-manager:latest'
+    restart: unless-stopped
+    ports:
+      - '80:80'  # 保持默认即可，不建议修改左侧的80
+      - '81:81'  # 冒号左边可以改成自己服务器未被占用的端口
+      - '443:443' # 保持默认即可，不建议修改左侧的443
+    volumes:
+      - ./data:/data # 冒号左边可以改路径，现在是表示把数据存放在在当前文件夹下的 data 文件夹中
+      - ./letsencrypt:/etc/letsencrypt  # 冒号左边可以改路径，现在是表示把数据存放在在当前文件夹下的 letsencrypt 文件夹中
+
+
+# 记得打开服务器防火墙端口号 81，查看端口是否被占用（以 81 为例），输入：
+lsof -i:81  #查看 81 端口是否被占用，如果被占用，重新自定义一个端口
+#如果啥也没出现，表示端口未被占用
+</code></pre>
+<ol start="3">
+<li>安装NPM</li>
+</ol>
+<pre  class="mc-prism hide language-text" ><code class="language-bash">cd /root/data/docker_data/npm
+docker compose up -d
+</code></pre>
+<ol start="4">
+<li>输入 <a href="http://ip:81/">http://ip:81</a> 访问</li>
+</ol>
+<pre  class="mc-prism hide language-text" ><code class="language-bash">默认登陆名和密码：
+
+Email: admin@example.com
+Password: changeme
+</code></pre>
+
+<h2 id="更新-nginx-proxy-manager" class="header-anchor-wrapper">更新 Nginx Proxy Manager
+  <a href="#%e6%9b%b4%e6%96%b0-nginx-proxy-manager" class="header-anchor-link">
+    <svg width="16px" height="16px" viewBox="0 0 24 24">
+<svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24" height="24" viewBox="0 0 24 24" fill="none"
+    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+    stroke-linejoin="round">
+    <line x1="4" y1="9" x2="20" y2="9"></line><line x1="4" y1="15" x2="20" y2="15"></line><line x1="10" y1="3" x2="8" y2="21"></line><line x1="16" y1="3" x2="14" y2="21"></line>
+</svg>
+
+</svg>
+  </a>
+</h2>
+
+<pre  class="mc-prism hide language-text" ><code class="language-bash">cd /root/data/docker_data/npm
+
+docker compose down
+
+cp -r /root/data/docker_data/npm /root/data/docker_data/npm.archive #备份一份数据
+
+docker compose pull
+
+docker compose up -d
+
+docker image prune  # prune 命令用来删除不再使用的 docker 对象。删除所有未被 tag 标记和未被容器使用的镜像
+</code></pre>
+
+<h2 id="卸载-nginx-proxy-manager" class="header-anchor-wrapper">卸载 Nginx Proxy Manager
+  <a href="#%e5%8d%b8%e8%bd%bd-nginx-proxy-manager" class="header-anchor-link">
+    <svg width="16px" height="16px" viewBox="0 0 24 24">
+<svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24" height="24" viewBox="0 0 24 24" fill="none"
+    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+    stroke-linejoin="round">
+    <line x1="4" y1="9" x2="20" y2="9"></line><line x1="4" y1="15" x2="20" y2="15"></line><line x1="10" y1="3" x2="8" y2="21"></line><line x1="16" y1="3" x2="14" y2="21"></line>
+</svg>
+
+</svg>
+  </a>
+</h2>
+
+<pre  class="mc-prism hide language-text" ><code class="language-bash">cd /root/data/docker_data/npm
+
+docker compose down
+
+rm -rf /root/data/docker_data/npm
+</code></pre>
+
+<h2 id="nginx-proxy-manager添加反向代理" class="header-anchor-wrapper">Nginx Proxy Manager添加反向代理
+  <a href="#nginx-proxy-manager%e6%b7%bb%e5%8a%a0%e5%8f%8d%e5%90%91%e4%bb%a3%e7%90%86" class="header-anchor-link">
+    <svg width="16px" height="16px" viewBox="0 0 24 24">
+<svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24" height="24" viewBox="0 0 24 24" fill="none"
+    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+    stroke-linejoin="round">
+    <line x1="4" y1="9" x2="20" y2="9"></line><line x1="4" y1="15" x2="20" y2="15"></line><line x1="10" y1="3" x2="8" y2="21"></line><line x1="16" y1="3" x2="14" y2="21"></line>
+</svg>
+
+</svg>
+  </a>
+</h2>
+
+<p><img alt="image-20241011001526417" src="https://yhyblog-2023-2-8.oss-cn-hangzhou.aliyuncs.com/md/2024/202410110015772.png"></p>
+<p><img alt="image-20241011001620277" src="https://yhyblog-2023-2-8.oss-cn-hangzhou.aliyuncs.com/md/2024/202410110016029.png"></p>
+<p><img alt="image-20241011001840586" src="https://yhyblog-2023-2-8.oss-cn-hangzhou.aliyuncs.com/md/2024/202410110018054.png"></p>
+
+<h2 id="nginx-proxy-manager配置https" class="header-anchor-wrapper">Nginx Proxy Manager配置Https
+  <a href="#nginx-proxy-manager%e9%85%8d%e7%bd%aehttps" class="header-anchor-link">
+    <svg width="16px" height="16px" viewBox="0 0 24 24">
+<svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24" height="24" viewBox="0 0 24 24" fill="none"
+    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+    stroke-linejoin="round">
+    <line x1="4" y1="9" x2="20" y2="9"></line><line x1="4" y1="15" x2="20" y2="15"></line><line x1="10" y1="3" x2="8" y2="21"></line><line x1="16" y1="3" x2="14" y2="21"></line>
+</svg>
+
+</svg>
+  </a>
+</h2>
+
+<ol>
+<li><strong>第一种：使用免费的证书服务</strong></li>
+</ol>
+<p><img alt="image-20241011002052102" src="https://yhyblog-2023-2-8.oss-cn-hangzhou.aliyuncs.com/md/2024/202410110020881.png"></p>
+<ol start="2">
+<li><strong>第二种：上传自己的证书，上传成功后到<code>Hosts</code>配置，即可看到自己上传的证书</strong></li>
+</ol>
+<p><img alt="image-20241011002319913" src="https://yhyblog-2023-2-8.oss-cn-hangzhou.aliyuncs.com/md/2024/202410110023003.png"></p>
+<blockquote>
+<p><strong>如果需要配置https，点击SSL，选择证书和勾选需要的配置即可，不需要修改Proxy Hots里的http为https</strong></p>
+</blockquote>
+
+</article>
+</div>
+
+
+                
+                    
+                
+            </div>
+        </main>
+<footer>
+    <article>Copyright © 2024 by yhy</article>
+</footer>
+
+</body>
+</html>

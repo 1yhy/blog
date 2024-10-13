@@ -6,62 +6,52 @@
     <lastmod>2024-10-01T00:51:30+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
-                hreflang="zh-CN"
+                hreflang="zh-cn"
                 href="http://localhost:1313/blog/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="en-US"
+                hreflang="en-us"
                 href="http://localhost:1313/blog/en-us/"
                 />
   </url><url>
     <loc>http://localhost:1313/blog/en-us/categories/</loc>
     <xhtml:link
                 rel="alternate"
-                hreflang="zh-CN"
+                hreflang="zh-cn"
                 href="http://localhost:1313/blog/categories/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="en-US"
+                hreflang="en-us"
                 href="http://localhost:1313/blog/en-us/categories/"
                 />
   </url><url>
     <loc>http://localhost:1313/blog/en-us/tags/index/</loc>
     <lastmod>2024-09-30T23:54:20+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-CN"
-                href="http://localhost:1313/blog/tags/index/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-US"
-                href="http://localhost:1313/blog/en-us/tags/index/"
-                />
   </url><url>
     <loc>http://localhost:1313/blog/en-us/posts/</loc>
     <lastmod>2024-09-30T23:54:20+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
-                hreflang="zh-CN"
+                hreflang="zh-cn"
                 href="http://localhost:1313/blog/posts/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="en-US"
+                hreflang="en-us"
                 href="http://localhost:1313/blog/en-us/posts/"
                 />
   </url><url>
     <loc>http://localhost:1313/blog/en-us/series/</loc>
     <xhtml:link
                 rel="alternate"
-                hreflang="zh-CN"
+                hreflang="zh-cn"
                 href="http://localhost:1313/blog/series/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="en-US"
+                hreflang="en-us"
                 href="http://localhost:1313/blog/en-us/series/"
                 />
   </url><url>
@@ -69,12 +59,12 @@
     <lastmod>2024-09-30T23:54:20+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
-                hreflang="zh-CN"
+                hreflang="zh-cn"
                 href="http://localhost:1313/blog/tags/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="en-US"
+                hreflang="en-us"
                 href="http://localhost:1313/blog/en-us/tags/"
                 />
   </url>

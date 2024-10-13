@@ -5,13 +5,50 @@
     <link>http://localhost:1313/blog/tags/</link>
     <description>Recent content in Tags on 笨鸟先飞</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-CN</language><atom:link href="http://localhost:1313/blog/tags/index.xml" rel="self" type="application/rss+xml" />
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 11 Oct 2024 00:00:32 +0800</lastBuildDate><atom:link href="http://localhost:1313/blog/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Index</title>
-      <link>http://localhost:1313/blog/tags/index/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <title>Nginx</title>
+      <link>http://localhost:1313/blog/tags/nginx/</link>
+      <pubDate>Fri, 11 Oct 2024 00:00:32 +0800</pubDate>
       
-      <guid>http://localhost:1313/blog/tags/index/</guid>
+      <guid>http://localhost:1313/blog/tags/nginx/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Nginx Proxy Manager</title>
+      <link>http://localhost:1313/blog/tags/nginx-proxy-manager/</link>
+      <pubDate>Fri, 11 Oct 2024 00:00:32 +0800</pubDate>
+      
+      <guid>http://localhost:1313/blog/tags/nginx-proxy-manager/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Uptime Kuma</title>
+      <link>http://localhost:1313/blog/tags/uptime-kuma/</link>
+      <pubDate>Fri, 11 Oct 2024 00:00:32 +0800</pubDate>
+      
+      <guid>http://localhost:1313/blog/tags/uptime-kuma/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>监控</title>
+      <link>http://localhost:1313/blog/tags/%E7%9B%91%E6%8E%A7/</link>
+      <pubDate>Fri, 11 Oct 2024 00:00:32 +0800</pubDate>
+      
+      <guid>http://localhost:1313/blog/tags/%E7%9B%91%E6%8E%A7/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>运维</title>
+      <link>http://localhost:1313/blog/tags/%E8%BF%90%E7%BB%B4/</link>
+      <pubDate>Fri, 11 Oct 2024 00:00:32 +0800</pubDate>
+      
+      <guid>http://localhost:1313/blog/tags/%E8%BF%90%E7%BB%B4/</guid>
       <description></description>
     </item>
     

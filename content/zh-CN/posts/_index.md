@@ -1,9 +1,6 @@
-+++
-aliases = ["posts", "articles", "blog", "showcase", "docs"]
-title = "Posts"
-author = "Hugo Authors"
-tags = ["index"]
-type = "postcard"
-+++
-
-Some posts from [hugoBasicExample](https://github.com/gohugoio/hugoBasicExample).
+---
+title: 'List Layout Demo'
+bookcase_cover_src: 'cover/list.png'
+bookcase_cover_src_dark: 'cover/list_dark.png'
+weight: 40
+---

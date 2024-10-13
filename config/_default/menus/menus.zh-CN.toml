@@ -10,11 +10,11 @@
   url = "/talks/"
   weight = 2
 
-[[navbar]]
-  identifier = "friends"
-  name = "友链"
-  url = "/friends/"
-  weight = 3
+# [[navbar]]
+#  identifier = "friends"
+#  name = "友链"
+#  url = "/friends/"
+#  weight = 3
 
 [[navbar]]
   identifier = "me"

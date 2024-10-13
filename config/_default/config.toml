@@ -1,10 +1,12 @@
 baseURL = 'https://1yhy.github.io/blog'
-languageCode = 'zh-CN'
+languageCode = 'zh-cn'
 title = '笨鸟先飞'
 theme = "hugo-theme-monochrome"
-defaultContentLanguage = "zh-CN"
+defaultContentLanguage = "zh-cn"
+defaultContentLanguageInSubdir = false
 enableEmoji = true
 enableGitInfo = true
+
 
 [taxonomies]
 category = "categories"
