@@ -21,3 +21,7 @@ pagerSize = 5
 
 [frontmatter]
 lastmod = ["lastmod", ":fileModTime"]
+
+[services]
+  [services.googleAnalytics]
+    id = 'G-EZS77WS4T3'
