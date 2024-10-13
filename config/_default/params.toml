@@ -31,3 +31,19 @@ lib = "prism.js" # "builtin" | "prism.js"
     [syntax_highlight.prism]
     enable_code_copy = true
     enable_line_no = false
+
+[page.comment]
+enable = true
+[page.comment.giscus]
+enable = true
+repo="1yhy/blog"
+repoId = "R_kgDOM_m8YA"
+category = "Announcements"
+categoryId = "DIC_kwDOM_m8YM4CjUnL"
+mapping = "pathname"
+strict = "0"
+reactionsEnabled = "1"
+emitMetadata = "1"
+inputPosition = "bottom" # ["top", "bottom"]
+lightTheme = "light"
+darkTheme = "dark_tritanopia"

@@ -20,8 +20,10 @@
     <meta charset="utf-8">
     <link rel="shortcut icon" href='http://localhost:1313/blog/favicon.ico' type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>CentOS7安装Docker - 笨鸟先飞</title>
+    <title>CentOS 7安装Docker - 笨鸟先飞</title>
 
+    
+    <meta name="description" content="在CentOS 7上安装Docker" />
     
 
     
@@ -33,21 +35,21 @@
     
         <meta property="og:url" content="http://localhost:1313/blog/posts/docker/">
   <meta property="og:site_name" content="笨鸟先飞">
-  <meta property="og:title" content="CentOS7安装Docker">
-  <meta property="og:description" content="Centos7安装Docker如果之前有装过Docker,建议先卸载旧版本相关依赖 sudo yum remove docker \ docker-client \ docker-client-latest \ docker-common \ docker-latest \ docker-latest-logrotate \ docker-logrotate \ docker-engine 安装 # step 1: 安装必要的一些系统工具 sudo yum install -y yum-utils device-mapper-persistent-data lvm2 # Step 2: 添加软件源信息 sudo yum-config-manager --add-repo http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo # Step 3: 更新并安装 Docker-CE sudo yum makecache fast sudo yum -y install docker-ce docker-ce-cli containerd.io # Step 4: 开启Docker服务并设置它在系统启动时自动启动 sudo systemctl start docker sudo systemctl enable docker # Step 5: 验证 Docker 是否安装成功并查看其版本 docker --version 安装完成后，最新版自带了docker compose命令，可以无需安装docker-compose 开启阿里云镜像加速（非必须） 进入阿里云控制台首页 进入管理控制台 -&gt; 登录账号 -&gt; 左上角控制台 -&gt; 产品与服务 -&gt; 容器 -&gt; 容器镜像服务 -&gt; 点击侧边栏镜像工具 -&gt; 镜像加速器 -&gt; 复制链接 ">
+  <meta property="og:title" content="CentOS 7安装Docker">
+  <meta property="og:description" content="在CentOS 7上安装Docker">
   <meta property="og:locale" content="zh_cn">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
     <meta property="article:published_time" content="2024-10-10T00:00:00+00:00">
-    <meta property="article:modified_time" content="2024-10-13T20:38:10+08:00">
+    <meta property="article:modified_time" content="2024-10-13T23:16:57+08:00">
 
     
 
     
         
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="CentOS7安装Docker">
-  <meta name="twitter:description" content="Centos7安装Docker如果之前有装过Docker,建议先卸载旧版本相关依赖 sudo yum remove docker \ docker-client \ docker-client-latest \ docker-common \ docker-latest \ docker-latest-logrotate \ docker-logrotate \ docker-engine 安装 # step 1: 安装必要的一些系统工具 sudo yum install -y yum-utils device-mapper-persistent-data lvm2 # Step 2: 添加软件源信息 sudo yum-config-manager --add-repo http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo # Step 3: 更新并安装 Docker-CE sudo yum makecache fast sudo yum -y install docker-ce docker-ce-cli containerd.io # Step 4: 开启Docker服务并设置它在系统启动时自动启动 sudo systemctl start docker sudo systemctl enable docker # Step 5: 验证 Docker 是否安装成功并查看其版本 docker --version 安装完成后，最新版自带了docker compose命令，可以无需安装docker-compose 开启阿里云镜像加速（非必须） 进入阿里云控制台首页 进入管理控制台 -&gt; 登录账号 -&gt; 左上角控制台 -&gt; 产品与服务 -&gt; 容器 -&gt; 容器镜像服务 -&gt; 点击侧边栏镜像工具 -&gt; 镜像加速器 -&gt; 复制链接 ">
+  <meta name="twitter:title" content="CentOS 7安装Docker">
+  <meta name="twitter:description" content="在CentOS 7上安装Docker">
 
     <link rel="stylesheet" href="/blog/style.css" integrity="">
 
@@ -363,29 +365,7 @@ sudo systemctl restart docker
 
 
                 
-                    <div class="content-margin">
-    <div id="disqus_thread"></div>
-<script>
-    window.disqus_config = function () {
-    
-    
-    
-    };
-    (function() {
-        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
-            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
-            return;
-        }
-        var d = document, s = d.createElement('script'); s.async = true;
-        s.src = '//' + "yhy-blog" + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-</div>
-
+                    
                 
             </div>
         </main>

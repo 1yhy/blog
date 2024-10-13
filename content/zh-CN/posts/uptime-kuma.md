@@ -1,11 +1,12 @@
 +++
-title = 'CentOS7搭建Uptime Kuma，实时监控你的个人网站状态'
+title = '开源项目 - CentOS 7搭建Uptime Kuma，实时监控你的个人网站状态'
 description = '自建一款监控个人网站的工具'
 date = 2024-10-11T00:00:32+08:00
 tags = [
     "Uptime Kuma",
     "运维",
-    "监控"
+    "监控",
+    "开源项目"
 ]
 +++
 

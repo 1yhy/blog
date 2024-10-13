@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>List Layout Demo on 笨鸟先飞</title>
-    <link>http://localhost:1313/blog/posts/</link>
-    <description>Recent content in List Layout Demo on 笨鸟先飞</description>
+    <title>开源项目 on 笨鸟先飞</title>
+    <link>http://localhost:1313/blog/tags/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/</link>
+    <description>Recent content in 开源项目 on 笨鸟先飞</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-cn</language><atom:link href="http://localhost:1313/blog/posts/index.xml" rel="self" type="application/rss+xml" />
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 11 Oct 2024 00:00:32 +0800</lastBuildDate><atom:link href="http://localhost:1313/blog/tags/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>开源项目 - CentOS 7搭建Uptime Kuma，实时监控你的个人网站状态</title>
       <link>http://localhost:1313/blog/posts/uptime-kuma/</link>
@@ -225,71 +226,6 @@ rm -rf /root/data/docker_data/npm
 &lt;/h2&gt;
 
 &lt;p&gt;&lt;img alt=&#34;image-20241011001526417&#34; src=&#34;https://yhyblog-2023-2-8.oss-cn-hangzhou.aliyuncs.com/md/2024/202410110015772.png&#34;&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>CentOS 7安装Docker</title>
-      <link>http://localhost:1313/blog/posts/docker/</link>
-      <pubDate>Thu, 10 Oct 2024 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/blog/posts/docker/</guid>
-      <description>&lt;h1 id=&#34;centos7安装docker&#34; class=&#34;header-anchor-wrapper&#34;&gt;Centos7安装Docker
-  &lt;a href=&#34;#centos7%e5%ae%89%e8%a3%85docker&#34; class=&#34;header-anchor-link&#34;&gt;
-    &lt;svg width=&#34;16px&#34; height=&#34;16px&#34; viewBox=&#34;0 0 24 24&#34;&gt;
-&lt;svg
-    xmlns=&#34;http://www.w3.org/2000/svg&#34;
-    width=&#34;24&#34; height=&#34;24&#34; viewBox=&#34;0 0 24 24&#34; fill=&#34;none&#34;
-    stroke=&#34;currentColor&#34; stroke-width=&#34;2&#34; stroke-linecap=&#34;round&#34;
-    stroke-linejoin=&#34;round&#34;&gt;
-    &lt;line x1=&#34;4&#34; y1=&#34;9&#34; x2=&#34;20&#34; y2=&#34;9&#34;&gt;&lt;/line&gt;&lt;line x1=&#34;4&#34; y1=&#34;15&#34; x2=&#34;20&#34; y2=&#34;15&#34;&gt;&lt;/line&gt;&lt;line x1=&#34;10&#34; y1=&#34;3&#34; x2=&#34;8&#34; y2=&#34;21&#34;&gt;&lt;/line&gt;&lt;line x1=&#34;16&#34; y1=&#34;3&#34; x2=&#34;14&#34; y2=&#34;21&#34;&gt;&lt;/line&gt;
-&lt;/svg&gt;
-
-&lt;/svg&gt;
-  &lt;/a&gt;
-&lt;/h1&gt;
-
-&lt;hr&gt;
-&lt;ol&gt;
-&lt;li&gt;如果之前有装过Docker,建议先卸载旧版本相关依赖&lt;/li&gt;
-&lt;/ol&gt;
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;sudo yum remove docker \
-                docker-client \
-                docker-client-latest \
-                docker-common \
-                docker-latest \
-                docker-latest-logrotate \
-                docker-logrotate \
-                docker-engine
-&lt;/code&gt;&lt;/pre&gt;
-&lt;ol start=&#34;2&#34;&gt;
-&lt;li&gt;安装&lt;/li&gt;
-&lt;/ol&gt;
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# step 1: 安装必要的一些系统工具
-sudo yum install -y yum-utils device-mapper-persistent-data lvm2
-
-# Step 2: 添加软件源信息
-sudo yum-config-manager --add-repo http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
-
-# Step 3: 更新并安装 Docker-CE
-sudo yum makecache fast
-sudo yum -y install docker-ce docker-ce-cli containerd.io
-
-# Step 4: 开启Docker服务并设置它在系统启动时自动启动
-sudo systemctl start docker
-sudo systemctl enable docker
-
-# Step 5: 验证 Docker 是否安装成功并查看其版本
-docker --version
-&lt;/code&gt;&lt;/pre&gt;
-&lt;ol start=&#34;3&#34;&gt;
-&lt;li&gt;安装完成后，最新版自带了&lt;code&gt;docker compose&lt;/code&gt;命令，可以无需安装&lt;code&gt;docker-compose&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;开启阿里云镜像加速（非必须）&lt;/li&gt;
-&lt;/ol&gt;
-&lt;ul&gt;
-&lt;li&gt;进入&lt;a href=&#34;https://aliyun.com/&#34;&gt;阿里云控制台首页&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;进入管理控制台 -&amp;gt; 登录账号 -&amp;gt; 左上角控制台 -&amp;gt; 产品与服务 -&amp;gt; 容器 -&amp;gt; 容器镜像服务 -&amp;gt; 点击侧边栏镜像工具 -&amp;gt; 镜像加速器 -&amp;gt; 复制链接&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;img alt=&#34;image-20241010235437889&#34; src=&#34;https://yhyblog-2023-2-8.oss-cn-hangzhou.aliyuncs.com/md/2024/202410102354031.png&#34;&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>

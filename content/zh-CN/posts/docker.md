@@ -1,5 +1,6 @@
 ---
-title: 'CentOS7安装Docker'
+title: 'CentOS 7安装Docker'
+description: '在CentOS 7上安装Docker'
 date: 2024-10-10
 ---
 

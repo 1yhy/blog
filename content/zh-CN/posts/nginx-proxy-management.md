@@ -1,11 +1,12 @@
 +++
-title = '部署Nginx Proxy Manager，一款开源的Nginx可视化应用'
+title = '开源项目 - 部署Nginx Proxy Manager，一款简便的Nginx可视化应用'
 description = '服务器部署Nginx Proxy Manager，可视化你的Nginx操作，轻松配置和反向代理Https'
 date = 2024-10-11T00:00:32+08:00
 tags = [
     "Nginx Proxy Manager",
     "运维",
-    "Nginx"
+    "Nginx",
+    "开源项目"
 ]
 +++
 
