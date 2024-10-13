@@ -22,7 +22,7 @@ jobs:
           extended: true
 
       - name: build content to public site
-        run: hugo --minify --gc'
+        run: hugo --minify --gc
 
       - name: setup ssh
         uses: webfactory/ssh-agent@v0.5.3
