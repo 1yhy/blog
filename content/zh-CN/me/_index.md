@@ -7,7 +7,7 @@ date: 2024-10-13
 <p>
 为什么是笨鸟先飞？因为取名字有点难🙄，自己也是做什么都没什么天赋的人，索性就先飞一下吧!
 
-<img src="/blog/icons/bird-dark.svg" alt="bird icon" style="display: inline-block; width: 1.5em; height: 1.5em; vertical-align: text-bottom;">
+<img src="/icons/bird-dark.svg" alt="bird icon" style="display: inline-block; width: 1.5em; height: 1.5em; vertical-align: text-bottom;">
 
 </p>
 
