@@ -16,13 +16,13 @@ jobs:
           submodules: true  # 启用子模块支持
 
       - name: setup hugo
-        uses: peaceiris/actions-hugo@v2
+        uses: peaceiris/actions-hugo@v3.0.0
         with:
           hugo-version: latest
           extended: true
 
       - name: build content to public site
-        run: hugo --minify --gc --baseURL='/'
+        run: hugo --minify --gc'
 
       - name: setup ssh
         uses: webfactory/ssh-agent@v0.5.3
