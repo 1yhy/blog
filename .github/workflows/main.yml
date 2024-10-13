@@ -36,6 +36,6 @@ jobs:
       
       - name: deploy to server
         run: |
-          rsync -avz --delete ./public/ root@43.135.94.57:/root/data/docker_data/blog/
+          rsync -avz --delete ./public/ root@43.135.94.57:/root/data/docker_data/blog/public/
         env:
           SSH_KNOWN_HOSTS: 43.135.94.57
