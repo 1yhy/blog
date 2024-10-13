@@ -22,7 +22,7 @@ jobs:
           extended: true
 
       - name: build content to public site
-        run: hugo --minify --gc --baseURL='https://blog.yhy.gd.cn/'
+        run: hugo --minify --gc --baseURL='/'
 
       - name: setup ssh
         uses: webfactory/ssh-agent@v0.5.3
