@@ -15,6 +15,9 @@ jobs:
         with:
           submodules: true  # 启用子模块支持
 
+      - name: update submodules  # 如果遇到子模块未正确更新，可以添加这一步
+        run: git submodule update --init --recursive
+
       - name: setup hugo
         uses: peaceiris/actions-hugo@v2
         with:
