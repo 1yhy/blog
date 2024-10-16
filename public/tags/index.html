@@ -69,12 +69,7 @@
     
     <script>
         if (!('theme' in localStorage)) {
-            { { $color_scheme:= (.Scratch.Get "params").color_scheme -} }
-            { { - if eq $color_scheme "light" -} }
-            localStorage.theme = 'light'
-            { { - else if eq $color_scheme "dark" -} }
-            localStorage.theme = 'dark'
-            { { - end } }
+            localStorage.theme = 'dark';
         }
 
         if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
@@ -105,7 +100,7 @@
 
 
 
-<link rel="stylesheet" href="http://localhost:1313/%20user.css">
+<link rel="stylesheet" href="http://localhost:1313/user.css">
 
     
 
@@ -276,24 +271,6 @@
             
             
 
-            <a class="term-item" href="/tags/nginx/" style="line-height:1.725rem">
-                <span style="font-size:0.875rem">Nginx</span>
-                <span style="font-size:0.675rem"> (1) </span>
-            </a>
-        
-            
-            
-            
-
-            <a class="term-item" href="/tags/nginx-proxy-manager/" style="line-height:1.725rem">
-                <span style="font-size:0.875rem">Nginx Proxy Manager</span>
-                <span style="font-size:0.675rem"> (1) </span>
-            </a>
-        
-            
-            
-            
-
             <a class="term-item" href="/tags/uptime-kuma/" style="line-height:1.725rem">
                 <span style="font-size:0.875rem">Uptime Kuma</span>
                 <span style="font-size:0.675rem"> (1) </span>
@@ -305,6 +282,24 @@
 
             <a class="term-item" href="/tags/%E7%9B%91%E6%8E%A7/" style="line-height:1.725rem">
                 <span style="font-size:0.875rem">监控</span>
+                <span style="font-size:0.675rem"> (1) </span>
+            </a>
+        
+            
+            
+            
+
+            <a class="term-item" href="/tags/nginx/" style="line-height:1.725rem">
+                <span style="font-size:0.875rem">Nginx</span>
+                <span style="font-size:0.675rem"> (1) </span>
+            </a>
+        
+            
+            
+            
+
+            <a class="term-item" href="/tags/nginx-proxy-manager/" style="line-height:1.725rem">
+                <span style="font-size:0.875rem">Nginx Proxy Manager</span>
                 <span style="font-size:0.675rem"> (1) </span>
             </a>
         

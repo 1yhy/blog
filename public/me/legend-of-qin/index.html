@@ -74,12 +74,7 @@
     
     <script>
         if (!('theme' in localStorage)) {
-            { { $color_scheme:= (.Scratch.Get "params").color_scheme -} }
-            { { - if eq $color_scheme "light" -} }
-            localStorage.theme = 'light'
-            { { - else if eq $color_scheme "dark" -} }
-            localStorage.theme = 'dark'
-            { { - end } }
+            localStorage.theme = 'dark';
         }
 
         if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
@@ -110,7 +105,7 @@
 
 
 
-<link rel="stylesheet" href="http://localhost:1313/%20user.css">
+<link rel="stylesheet" href="http://localhost:1313/user.css">
 
     
 
@@ -234,7 +229,7 @@
                 
 
 
-    <div class="content-margin">
+<div class="content-margin">
 
 
 
@@ -259,6 +254,46 @@
 
                 
                     
+                    
+                        <hr style="border: none; border-top: 1px solid #ddd; margin: 4rem 0 2rem 0;"><div class="giscus-wrapper">
+<script>
+        
+        function setGiscusTheme() {
+        const theme = localStorage.theme === 'dark' ? 'dark_dimmed' : 'light';
+        const giscusScript = document.createElement('script');
+        giscusScript.src = "https://giscus.app/client.js";
+        giscusScript.setAttribute('data-repo', '1yhy/blog');
+        giscusScript.setAttribute('data-repo-id', 'R_kgDOM_m8YA');
+        giscusScript.setAttribute('data-category', 'Announcements');
+        giscusScript.setAttribute('data-category-id', 'DIC_kwDOM_m8YM4CjUnL');
+        giscusScript.setAttribute('data-mapping', 'pathname');
+        giscusScript.setAttribute('data-strict', '0');
+        giscusScript.setAttribute('data-reactions-enabled', '1');
+        giscusScript.setAttribute('data-emit-metadata', '1');
+        giscusScript.setAttribute('data-input-position', 'top');
+        giscusScript.setAttribute('data-theme', theme);
+        giscusScript.setAttribute('data-lang', 'zh-CN');
+        giscusScript.setAttribute('data-loading', 'lazy');
+        giscusScript.crossOrigin = 'anonymous';
+        giscusScript.async = true;
+
+        
+        document.querySelector('.giscus-wrapper').appendChild(giscusScript);
+        }
+
+        
+        setGiscusTheme();
+
+        
+        window.addEventListener('storage', function(event) {
+        if (event.key === 'theme') {
+                
+                setGiscusTheme();
+        }
+        });
+</script>
+</div>
+
                 
             </div>
         </main>

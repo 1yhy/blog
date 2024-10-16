@@ -69,12 +69,7 @@
     
     <script>
         if (!('theme' in localStorage)) {
-            { { $color_scheme:= (.Scratch.Get "params").color_scheme -} }
-            { { - if eq $color_scheme "light" -} }
-            localStorage.theme = 'light'
-            { { - else if eq $color_scheme "dark" -} }
-            localStorage.theme = 'dark'
-            { { - end } }
+            localStorage.theme = 'dark';
         }
 
         if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
@@ -105,7 +100,7 @@
 
 
 
-<link rel="stylesheet" href="http://localhost:1313/%20user.css">
+<link rel="stylesheet" href="http://localhost:1313/user.css">
 
     
 

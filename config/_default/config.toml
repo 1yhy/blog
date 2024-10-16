@@ -7,7 +7,6 @@ defaultContentLanguageInSubdir = false
 enableEmoji = true
 enableGitInfo = true
 
-
 [taxonomies]
 category = "categories"
 tag = "tags"

@@ -76,12 +76,7 @@
     
     <script>
         if (!('theme' in localStorage)) {
-            { { $color_scheme:= (.Scratch.Get "params").color_scheme -} }
-            { { - if eq $color_scheme "light" -} }
-            localStorage.theme = 'light'
-            { { - else if eq $color_scheme "dark" -} }
-            localStorage.theme = 'dark'
-            { { - end } }
+            localStorage.theme = 'dark';
         }
 
         if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
@@ -112,7 +107,7 @@
 
 
 
-<link rel="stylesheet" href="http://localhost:1313/%20user.css">
+<link rel="stylesheet" href="http://localhost:1313/user.css">
 
     
 
@@ -301,12 +296,12 @@
 <ul class="list-layout">
     
         <li>
-            <a href="/posts/uptime-kuma/">开源项目 - CentOS 7搭建Uptime Kuma，实时监控你的个人网站状态</a>
-            <span>2024/10/13</span>
+            <a href="/posts/docker/">CentOS 7安装Docker</a>
+            <span>2024/10/17</span>
         </li>
     
         <li>
-            <a href="/posts/docker/">CentOS 7安装Docker</a>
+            <a href="/posts/uptime-kuma/">开源项目 - CentOS 7搭建Uptime Kuma，实时监控你的个人网站状态</a>
             <span>2024/10/13</span>
         </li>
     
