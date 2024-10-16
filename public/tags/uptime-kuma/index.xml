@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Uptime Kuma on 笨鸟先飞</title>
+    <link>http://localhost:1313/tags/uptime-kuma/</link>
+    <description>Recent content in Uptime Kuma on 笨鸟先飞</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 11 Oct 2024 00:00:32 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/uptime-kuma/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>开源项目 - CentOS 7搭建Uptime Kuma，实时监控你的个人网站状态</title>
+      <link>http://localhost:1313/posts/uptime-kuma/</link>
+      <pubDate>Fri, 11 Oct 2024 00:00:32 +0800</pubDate>
+      
+      <guid>http://localhost:1313/posts/uptime-kuma/</guid>
+      <description>&lt;h1 id=&#34;服务器部署一款开源的监控工具uptime-kumahttpsgithubcomlouislamuptime-kuma&#34; class=&#34;header-anchor-wrapper&#34;&gt;服务器部署一款开源的监控工具：&lt;a href=&#34;https://github.com/louislam/uptime-kuma&#34;&gt;Uptime Kuma&lt;/a&gt;
+  &lt;a href=&#34;#%e6%9c%8d%e5%8a%a1%e5%99%a8%e9%83%a8%e7%bd%b2%e4%b8%80%e6%ac%be%e5%bc%80%e6%ba%90%e7%9a%84%e7%9b%91%e6%8e%a7%e5%b7%a5%e5%85%b7uptime-kumahttpsgithubcomlouislamuptime-kuma&#34; class=&#34;header-anchor-link&#34;&gt;
+    &lt;svg width=&#34;16px&#34; height=&#34;16px&#34; viewBox=&#34;0 0 24 24&#34;&gt;
+&lt;svg
+    xmlns=&#34;http://www.w3.org/2000/svg&#34;
+    width=&#34;24&#34; height=&#34;24&#34; viewBox=&#34;0 0 24 24&#34; fill=&#34;none&#34;
+    stroke=&#34;currentColor&#34; stroke-width=&#34;2&#34; stroke-linecap=&#34;round&#34;
+    stroke-linejoin=&#34;round&#34;&gt;
+    &lt;line x1=&#34;4&#34; y1=&#34;9&#34; x2=&#34;20&#34; y2=&#34;9&#34;&gt;&lt;/line&gt;&lt;line x1=&#34;4&#34; y1=&#34;15&#34; x2=&#34;20&#34; y2=&#34;15&#34;&gt;&lt;/line&gt;&lt;line x1=&#34;10&#34; y1=&#34;3&#34; x2=&#34;8&#34; y2=&#34;21&#34;&gt;&lt;/line&gt;&lt;line x1=&#34;16&#34; y1=&#34;3&#34; x2=&#34;14&#34; y2=&#34;21&#34;&gt;&lt;/line&gt;
+&lt;/svg&gt;
+
+&lt;/svg&gt;
+  &lt;/a&gt;
+&lt;/h1&gt;
+
+&lt;hr&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;前置条件：在服务器安装完成&lt;code&gt;Docker&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;创建安装目录&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;sudo -i
+
+mkdir -p /root/data/docker_data/uptime_kuma
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;编辑&lt;code&gt;docker-compose.yml&lt;/code&gt;文件&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;cd /root/data/docker_data/uptime_kuma
+
+vim docker-compose.yml
+
+# 输入安装脚本,以下版本为1.23.X版本，如需最新版本，需自行修改
+version: &#39;3.3&#39;
+
+services:
+  uptime-kuma:
+    image: louislam/uptime-kuma:1
+    container_name: uptime-kuma
+    volumes:
+      - ./uptime-kuma-data:/app/data
+    ports:
+      - 3001:3001  # &amp;lt;Host Port&amp;gt;:&amp;lt;Container Port&amp;gt;
+    restart: always
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;运行安装命令&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;docker compose up -d
+
+# 打开防火墙3001d
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;输入http://服务器地址:3001 访问&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20241011005920166&#34; src=&#34;https://yhyblog-2023-2-8.oss-cn-hangzhou.aliyuncs.com/md/2024/202410110059112.png&#34;&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
